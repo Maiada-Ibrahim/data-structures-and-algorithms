@@ -168,6 +168,17 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  let newarr=[]
+  arr.forEach(value =>{
+    if ((value%3 == 0) && (value%5 ==0) ){
+      newarr.push("Fizz Buzz")
+  }else if (value%5==0){newarr.push("Buzz")
+    
+}else if (value%3==0){newarr.push("Fizz")
+}else{ newarr.push(value) }
+
+ })
+ return newarr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -221,7 +232,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
