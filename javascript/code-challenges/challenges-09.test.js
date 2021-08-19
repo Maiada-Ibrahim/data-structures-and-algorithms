@@ -15,7 +15,7 @@ const maxInArray = (arr) => {
     acc = val
     return acc;
   },0);
-  return sum
+  return max
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +47,10 @@ Write a function named checkValues that takes in an object and a value and retur
 const checkValues = (obj, value) => {
   // Solution code here...
   let valusobj= Object.values(obj)
-  if(valusobj.includes(value)) { return true;} 
+  if(valusobj.includes(value))
+   { return true
+  } else {
+    return false}
   
 
 };
@@ -73,6 +76,14 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  let newarray=[]
+  let keyobj= Object.keys(obj)
+  let valusobj= Object.values(obj)
+  for (let i=0;i<keyobj.length;i++)
+  {
+     newarray.push(`${keyobj[i]}: ${valusobj[i]}`) 
+  }
+  return newarray
 };
 
 
@@ -129,6 +140,9 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  
+
+  houses = arr.map(obj => obj.house)
   return houses;
 };
 
@@ -146,7 +160,13 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let child = false;
+  Object.values(arr).forEach(value => {
+     if (value.name === character && value.children) {
+        child = true; 
+      }
+       }); 
+        return child;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,6 +179,7 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
