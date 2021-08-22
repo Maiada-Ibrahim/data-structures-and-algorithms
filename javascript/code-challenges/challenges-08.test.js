@@ -56,7 +56,15 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
-  // no thig
+  charArray.sort((a,b) => {
+    if( a.children.length < b.children.length) {
+      return -5;
+    }
+     else if (a.children.length  >b.children.length ) return 1;
+     else return 0;
+ });
+return charArray
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,6 +76,10 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
+  let regex1 =/w/g;
+let res1 = regex1.test(str);
+return res1
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,6 +96,9 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let regex1 = /\d/g;
+let res1 = regex1.test(input);
+return res1
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,7 +110,14 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+let regex1 = /world/;
+let res1 = regex1.test(input);
+return res1
+
 };
+
+  
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -107,6 +129,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex = /\b[A-Z](\w)*/g;
+  let result = str.match(regex);
+  if (result == null) {
+    return [];
+  } else {
+    return result;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,6 +146,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  
+  
+  let regex = /^[A-J]/;
+ let regex2=  arr.filter(value =>regex.test(value));
+return regex2
+
 };
 
 /* ------------------------------------------------------------------------------------------------
