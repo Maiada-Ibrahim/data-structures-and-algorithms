@@ -12,7 +12,7 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-  return array.filter(reg =>/^(Mr||Mrs||Ms||Dr).\s[A-Za-z]/.test(reg))
+  return arr.filter(reg => /^(Mr||Mrs||Ms||Dr).\s[A-Za-z]/.test(reg))
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,6 +25,10 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let newarray = arr.map(value => {
+    return value[0].toUpperCase() + value.slice(1)
+  })
+  return newarray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,6 +104,14 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let resultearray = []
+  arr.filter(value => {
+    if (parseInt(value.mass) > parseInt(arr[0].mass)) { resultearray.push(value.name) }
+
+
+  })
+  return resultearray.join(' - ')
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,6 +130,17 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+    if (a[property] < b[property]) {
+      console.log(a[property])
+      // console.log(b[property])
+      return -5;
+    }
+    else if (a[property] > b[property]) return 1;
+    else return 0;
+  });
+  return arr
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,6 +157,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  let reg = /(https:\/\/)/;
+  return reg.test(url)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,6 +182,18 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+
+  let first = board[0];
+  let sec = board[1];
+  let three = board[2];
+  for (let i = 0; i < board.length; i++) {
+    if (first[0] == sec[0] == three[0] || first[0] == sec[1] == three[2] || first[2] == sec[1] == three[0] || first[0] == first[1] == first[2] || sec[0] == sec[1] == sec[2] || three[0] == three[1] == three[2] || first[1] == sec[1] == three[1] || first[2] == sec[2] == three[2]) {
+      return true
+    } else {
+      return false
+    }
+  }
+   return board;  
 };
 
 /* ------------------------------------------------------------------------------------------------
