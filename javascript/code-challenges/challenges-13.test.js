@@ -27,6 +27,12 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
+  // let max = ''
+  let reslut=  arr.map(value =>{
+    return value.charAt(0)
+
+    })
+    return reslut
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,6 +45,14 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  let reslut=  arr.filter(value =>{
+  if (value.includes(":)") )
+  return value
+    
+   
+
+    })
+    return reslut
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,6 +65,11 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  let newarr = []
+  arr.forEach(value => {
+    newarr.push (value.replace(/[\s\-()]/g,''))
+  });
+  return newarr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,6 +82,10 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let oddarray=[]
+ for (let i=1;i<str.length;i=i+2)
+ {oddarray.push(str[i])}
+return oddarray.join('')
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,6 +96,16 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  let reslut=  arr.filter(value =>{
+    if (value.includes(":)") )
+   {return true} 
+  
+      })
+      if (reslut.length==arr.length)
+      {return true}
+      else
+      {return false}
+
 };
 
 /* ------------------------------------------------------------------------------------------------
